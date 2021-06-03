@@ -7,6 +7,10 @@ const connectDB = require('./config/db')
 
 connectDB()
 
+//Init middleWare
+
+app.use(express.json())  //это метод, встроенный в express для распознавания входящего объекта запроса как объекта JSON. Этот метод вызывается в качестве промежуточного программного обеспечения в вашем приложении с использованием кода
+
 
 app.get('/', (req, res)=> res.send('API running'))
 
