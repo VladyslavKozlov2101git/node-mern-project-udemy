@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://VladyslavKozlov:vv654321@devconnector.gntfr.mongodb.net/DevConnector?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://VladyslavKozlov:vv654321@devconnector.gntfr.mongodb.net/DevConnector?retryWrites=true&w=majority",
+    "jwtSecret":"mysecrettoken"
 }
