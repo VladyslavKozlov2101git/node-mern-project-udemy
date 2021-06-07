@@ -64,7 +64,7 @@ router.post('/',[auth,[
 
     profileFields.user = req.user.id
 
-    if(company) profileFields.company = company
+    if(company) profileFields.company = company 
     if(website) profileFields.website = website
     if(location) profileFields.location = location
     if(bio) profileFields.bio = bio
@@ -73,6 +73,48 @@ router.post('/',[auth,[
     if(skills){
         profileFields.skills = skills.split(',').map(skill => skill.trim())
     }
+
+    //Build social object
+
+    profileFields.social = {}
+
+    if (youtube) profileFields.social.youtube = youtube
+    if (facebook) profileFields.social.facebook = facebook
+    if (twitter) profileFields.social.twitter = twitter
+    if (instagram) profileFields.social.instagram = instagram
+    if (linkedin) profileFields.social.linkedin = linkedin
+
+
+    try {
+
+        let profile = await Profile.findOne({user : req.user.id})
+
+        if(profile){
+            //Update
+            profile = await Profile.findOneAndUpdate(
+                {user : req.user.id},
+                {$set : profileFields},
+                {new:true}
+            )
+
+            return res.json(profile)
+        }
+
+        //Create
+
+        profile = new Profile(profileFields)
+        await profile.save()
+        res.json(profile)
+
+
+
+        
+    } catch (error) {
+        console.error(error.message)
+        res.status(500).send('Server error')
+    }
+
+
 
     res.send('Success')
 
