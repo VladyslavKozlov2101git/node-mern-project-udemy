@@ -1,4 +1,6 @@
 {
     "mongoURI":"mongodb+srv://VladyslavKozlov:vv654321@devconnector.gntfr.mongodb.net/DevConnector?retryWrites=true&w=majority",
-    "jwtSecret":"mysecrettoken"
+    "jwtSecret":"mysecrettoken",
+    "githubClientId":"5cc10a8a04b5853f1376",
+    "githubSecret":"bf41c4b39d9292cbcea067e75e5bf83c485ff878"
 }
