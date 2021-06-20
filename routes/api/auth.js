@@ -7,9 +7,10 @@ const auth = require('../../middleware/auth') ///тут знаходиться �
 const User = require('../../models/User')
 const bcrypt = require('bcryptjs');
 
-// @route   GET api/auth
-// @desc    Tests users route
-// @access  Public
+// @route    GET api/auth
+// @desc     Get user by token
+// @access   Private
+
 router.get('/', auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password') // -password означає, що дане поле не буде виводитися
