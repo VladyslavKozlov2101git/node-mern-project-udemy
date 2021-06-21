@@ -10,7 +10,7 @@ const Navbar = () => {
             <ul>
                 <li><Link to="profiles.html">Developers</Link></li>
                 <li><Link to="/register">Register</Link></li>
-                <li><Link to="/loginl">Login</Link></li>
+                <li><Link to="/login">Login</Link></li>
             </ul>
         </nav>
     )
