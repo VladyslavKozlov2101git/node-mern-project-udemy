@@ -21,6 +21,3 @@ export default connect(mapStateToProps)(Alert);
 
 
 
-
-
-////////// 12 30
